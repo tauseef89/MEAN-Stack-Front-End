@@ -1,0 +1,23 @@
+nav {
+  background: #4285f4;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  h1 {
+    color: #ffffff;
+  }
+  li {
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  a {
+    color: #fff;
+    padding: 0 15px;
+    text-decoration: none;
+    line-height: 30px;
+    display: block;
+  }
+}
