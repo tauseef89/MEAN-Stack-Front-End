@@ -2,14 +2,18 @@
   <h1>Prop Listing App</h1>
   <ul class="main-menu">
     <li><a routerLink="/listings">All Listing</a></li>
-    <li>
+    <li *ngIf="userService.loggedIn()">
       <a routerLink="listings/add-listing">Add Listing</a>
     </li>
-    <li>
+    <li *ngIf="!userService.loggedIn()">
       <a routerLink="user/login">Login</a>
     </li>
-    <li>
+    <li *ngIf="!userService.loggedIn()">
       <a routerLink="user/register">Register</a>
+    </li>
+
+    <li *ngIf="userService.loggedIn()">
+      <a style="cursor: pointer" (click)="userService.logOut()">Log Out</a>
     </li>
   </ul>
 </nav>

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Listing } from "../model/listing";
 import { Subscription } from "rxjs";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { UserService } from "../../user/service/user.service";
 
 @Component({
   selector: "app-listing-detail",
@@ -29,7 +30,8 @@ export class ListingDetailComponent implements OnInit, OnDestroy {
   constructor(
     private listingService: ListingService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private userService: UserService
   ) {}
 
   ngOnInit() {

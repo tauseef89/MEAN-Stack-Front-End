@@ -2,8 +2,14 @@
   <h4>{{ listing.title }}</h4>
   <h5>Price: {{ listing.price }} | Locality: {{ listing.locality }}</h5>
   <p>Details: {{ listing.details }}</p>
-  <button (click)="showEdit()">Edit</button>
-  <button class="btn-delete" (click)="removeListing()">Delete</button>
+  <button *ngIf="userService.loggedIn()" (click)="showEdit()">Edit</button>
+  <button
+    *ngIf="userService.loggedIn()"
+    class="btn-delete"
+    (click)="removeListing()"
+  >
+    Delete
+  </button>
 </div>
 
 <div class="form-wrrap" *ngIf="showForm">

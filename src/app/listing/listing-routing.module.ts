@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { AllListingComponent } from "./all-listing/all-listing.component";
 import { ListingDetailComponent } from "./listing-detail/listing-detail.component";
 import { AddListingComponent } from "./add-listing/add-listing.component";
+import { AuthGuard } from "../user/guard/auth.guard";
 
 const routes: Routes = [
   {
@@ -11,7 +12,8 @@ const routes: Routes = [
   },
   {
     path: "add-listing",
-    component: AddListingComponent
+    component: AddListingComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: ":id",
