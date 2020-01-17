@@ -29,4 +29,16 @@ export class ListingService {
   addListing(listing) {
     return this.http.post<any>(this.ROOT_URL, listing, this.httpOptions);
   }
+
+  editListing(listing, id: string) {
+    return this.http.put<any>(
+      `${this.ROOT_URL}/${id}`,
+      listing,
+      this.httpOptions
+    );
+  }
+
+  deleteListing(id: string) {
+    return this.http.delete(`${this.ROOT_URL}/${id}`, this.httpOptions);
+  }
 }

@@ -53,6 +53,22 @@ main {
   h5 {
     margin: 10px 0;
   }
+  button {
+    background: #4285f4;
+    border: 2px solid #4285f4;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 45%;
+    margin: 15px 10px 0px 10px;
+    &.btn-delete {
+      background: #ea4335;
+      border: 2px solid #ea4335;
+    }
+  }
 }
 .form-wrrap {
   max-width: 500px;

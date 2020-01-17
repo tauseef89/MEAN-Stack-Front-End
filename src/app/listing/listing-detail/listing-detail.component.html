@@ -2,4 +2,41 @@
   <h4>{{ listing.title }}</h4>
   <h5>Price: {{ listing.price }} | Locality: {{ listing.locality }}</h5>
   <p>Details: {{ listing.details }}</p>
+  <button (click)="showEdit()">Edit</button>
+  <button class="btn-delete" (click)="removeListing()">Delete</button>
+</div>
+
+<div class="form-wrrap" *ngIf="showForm">
+  <h3>Edit Listing</h3>
+  <form [formGroup]="editListingForm" (ngSubmit)="editListing()">
+    <input
+      type="text"
+      placeholder="Enter Title"
+      [(ngModel)]="listing.title"
+      formControlName="title"
+    />
+    <input
+      type="text"
+      placeholder="Enter Price"
+      [(ngModel)]="listing.price"
+      formControlName="price"
+    />
+    <input
+      type="text"
+      placeholder="Enter Locality"
+      [(ngModel)]="listing.locality"
+      formControlName="locality"
+    />
+    <input
+      type="text"
+      placeholder="Enter Details"
+      [(ngModel)]="listing.details"
+      formControlName="details"
+    />
+    <input
+      type="submit"
+      value="Add Listing"
+      [disabled]="!editListingForm.valid"
+    />
+  </form>
 </div>
